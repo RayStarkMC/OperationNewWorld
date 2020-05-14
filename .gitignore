@@ -1,0 +1,8 @@
+*
+!*/
+!.gitignore
+!changelog.md
+!README.md
+!scripts/*
+!mod-list.txt
+!LICENSE
