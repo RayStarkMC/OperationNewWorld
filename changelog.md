@@ -157,7 +157,7 @@
 
 ## **0.4.0a**
 - Description
-	
+	Adjusted balance of Calculator and Immersive Engineering.
 - Change
 	- [Calculator]
 		- Changed recipe for Info Calculator.

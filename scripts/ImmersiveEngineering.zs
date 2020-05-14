@@ -33,6 +33,8 @@ val capacitorLV = <ImmersiveEngineering:metalDevice:1>;
 val capacitorMV = <ImmersiveEngineering:metalDevice:3>;
 val capacitorHV = <ImmersiveEngineering:metalDevice:7>;
 val crateWoodenStorage = <ImmersiveEngineering:woodenDevice:4>;
+val engineeringBlockLight = <ImmersiveEngineering:metalDecoration:7>;
+val engineeringBlockHeavy = <ImmersiveEngineering:metalDecoration:5>;
 
 val ingotCopper = <gregtech:gt.metaitem.01:11035>;
 val ingotIron = <minecraft:iron_ingot>;
@@ -46,6 +48,8 @@ val plateIron = <gregtech:gt.metaitem.01:17032>;
 val plateCopper = <gregtech:gt.metaitem.01:17035>;
 val plateSteel = <gregtech:gt.metaitem.01:17305>;
 val plateCupronickel = <gregtech:gt.metaitem.01:17310>;
+val plateStainlessSteel = <gregtech:gt.metaitem.01:17306>;
+val plateTitanium = <gregtech:gt.metaitem.01:17028>;
 val plateDoubleCupronickel = <gregtech:gt.metaitem.01:18310>;
 val plateDoubleSteel = <gregtech:gt.metaitem.01:18305>;
 val wireFineCopper = <gregtech:gt.metaitem.02:19035>;
@@ -57,6 +61,10 @@ val batteryLithiumSmall = <gregtech:gt.metaitem.01:32518>;
 val machineHullLV = <gregtech:gt.blockmachines:11>;
 val batteryBuffer16MV = <gregtech:gt.blockmachines:192>;
 val batteryAcidHV = <gregtech:gt.metaitem.01:32530>.withTag({"GT.ItemCharge": 288000 as long});
+val machineCasingStainlessSteel = <gregtech:gt.blockcasings4:1>;
+val machineCasingTitanium = <gregtech:gt.blockcasings4:2>;
+val machineHullHV = <gregtech:gt.blockmachines:13>;
+val mahcineHullEV = <gregtech:gt.blockmachines:14>;
 
 val stickWood = <minecraft:stick>;
 val redstone = <minecraft:redstone>;
@@ -65,6 +73,8 @@ val stringM = <minecraft:string>; // variable name "string" cannot be used.
 val dictIngotSteel = <ore:ingotSteel>;
 val dictGearsGT = getDictGearsGT();
 val dictPlateSteel = <ore:plateSteel>;
+val dictCircuitAdvanced = <ore:circuitAdvanced>;
+val dictCircuitData = <ore:circuitData>;
 
 val moltenSolderingAlloy = <liquid:molten.solderingalloy>;
 
@@ -193,6 +203,20 @@ for recipe in recipesCapacitor {
     [crateWoodenStorage, recipe[1]       , crateWoodenStorage]
   ]);
 }
+
+recipes.remove(engineeringBlockLight);
+recipes.addShaped(engineeringBlockLight, [
+  [dictCircuitAdvanced        , mechanicalComponentIron, dictCircuitAdvanced        ],
+  [machineCasingStainlessSteel, machineHullHV          , machineCasingStainlessSteel],
+  [dictCircuitAdvanced        , mechanicalComponentIron, dictCircuitAdvanced        ]
+]);
+
+recipes.remove(engineeringBlockHeavy);
+recipes.addShaped(engineeringBlockHeavy, [
+  [dictCircuitData      , mechanicalComponentSteel, dictCircuitData      ],
+  [machineCasingTitanium, mahcineHullEV           , machineCasingTitanium],
+  [dictCircuitData      , mechanicalComponentSteel, dictCircuitData      ]
+]);
 
 
 // --- functions ---

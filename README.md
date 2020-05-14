@@ -16,7 +16,7 @@ There are no reward, so you can play the pack ignoring all quests.
 
 - Minecraft: 1.7.10
 - Forge: 10.13.4.1614
-- ModPack: 0.3.4a
+- ModPack: 0.4.0a
 
 ## How to build?
 Download latest version from the forum below and import it by twitch. Then overwrite the scripts directory with the one from this repository.
