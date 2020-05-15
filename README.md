@@ -19,7 +19,7 @@ There are no reward, so you can play the pack ignoring all quests.
 - ModPack: 0.4.0a
 
 ## How to build?
-Download latest version from the forum below and import it by twitch. Then overwrite the scripts directory with the one from this repository.
+Download latest version from the forum below and import it by twitch. Then overwrite all things with ones from this repository..
 
 ## Issue
 If you have any problems, questions, or suggestions, feel free to post them on [Issues](https://github.com/RayStarkMC/OperationNewWorld/issues).

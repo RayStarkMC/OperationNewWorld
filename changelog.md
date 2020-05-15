@@ -199,3 +199,11 @@
 - Fix
 	- Fixed recipes using Blast Fuance.
 	- Fixed a bug that Mekanism tank is not deleted.
+
+## **0.4.1a**
+- Description
+- Change
+	- [ThermalExpansion]
+		- Changed recipes for coils.
+	- [AppliedEnergistics2]
+		- Implemented recipes.
