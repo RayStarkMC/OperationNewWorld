@@ -16,10 +16,10 @@ There are no reward, so you can play the pack ignoring all quests.
 
 - Minecraft: 1.7.10
 - Forge: 10.13.4.1614
-- ModPack: 0.4.0a
+- ModPack: 0.4.1a
 
 ## How to build?
-Download latest version from the forum below and import it by twitch. Then overwrite the scripts directory with the one from this repository.
+Download latest version from the forum below and import it by twitch. Then overwrite all things with ones from this repository..
 
 ## Issue
 If you have any problems, questions, or suggestions, feel free to post them on [Issues](https://github.com/RayStarkMC/OperationNewWorld/issues).
