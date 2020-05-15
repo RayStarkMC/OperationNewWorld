@@ -203,3 +203,5 @@
 ## **0.4.0a**
 - Description
 - Change
+	- [ThermalExpansion]
+		- Changed recipes for coils.
