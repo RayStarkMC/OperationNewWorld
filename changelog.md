@@ -202,8 +202,17 @@
 
 ## **0.4.1a**
 - Description
+	Implemented recipes.
 - Change
 	- [ThermalExpansion]
 		- Changed recipes for coils.
 	- [AppliedEnergistics2]
 		- Implemented recipes.
+	- [AE2Stuff]
+		- Changed version to rv3-0.5.1.9.
+	- [INpureCore]
+		- Added INpure Core.
+	- [Mekanism]
+		- Removed oredict name from Basic Control Circuit.
+	- [LogisticsPipes]
+		Implemented recipes.
