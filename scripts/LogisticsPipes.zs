@@ -229,7 +229,7 @@ changeRecipe(securityStation, [
   [blockRedstone, machineHullMV   , blockRedstone],
   [plateSteel   , pipeBasic       , plateSteel   ]
 ]);
-changeRecipe(sraftingTable, [
+changeRecipe(craftingTable, [
   [plateAluminium  , coverCraftingTable, plateAluminium  ],
   [circuitExpansion, machineHullLV     , circuitExpansion],
   [plateAluminium  , woodenStorageCrate, plateAluminium  ]

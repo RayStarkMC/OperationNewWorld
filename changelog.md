@@ -221,3 +221,9 @@
 		- Removed oredict name from Basic Control Circuit.
 	- [LogisticsPipes]
 		- Implemented recipes.
+
+## **0.4.3a**
+- Description
+	Fix scripts.
+- Fix
+	- Fixed script for LP.
