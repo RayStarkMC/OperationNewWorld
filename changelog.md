@@ -220,4 +220,4 @@
 	- [Mekanism]
 		- Removed oredict name from Basic Control Circuit.
 	- [LogisticsPipes]
-		Implemented recipes.
+		- Implemented recipes.
