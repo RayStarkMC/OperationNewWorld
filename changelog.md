@@ -227,3 +227,6 @@
 	Fix scripts.
 - Fix
 	- Fixed script for LP.
+
+## **0.4.4a**
+- Description
