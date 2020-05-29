@@ -123,7 +123,5 @@ for i, gear in uniqueGears {
 // remove gear
 for i, gear in commonGears {
   recipes.remove(gear);
-  dictGears[i].remove(gear);
-  dictTEGears[i].remove(gear);
   MetalPress.removeRecipe(gear);
 }

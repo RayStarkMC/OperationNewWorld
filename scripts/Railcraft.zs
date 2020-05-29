@@ -6,6 +6,9 @@ import minetweaker.item.WeightedItemStack;
 import minetweaker.oredict.IOreDictEntry;
 
 
+
+
+
 // --- constants ---
 
 static prefixDustImpure as string = "dustImpure";
@@ -16,11 +19,10 @@ static prefixClump as string = "clump";
 static prefixShard as string = "shard";
 
 
-// --- aliases ---
 
-val gearIronRC = <Railcraft:part.gear:1>;
-val dictGearIron = <ore:gearIron>;
-val dictTEGearIron = <ore:thermalexpansion:machineIron>;
+
+
+// --- aliases ---
 
 val rockCrusherBlock = <Railcraft:machine.alpha:15>;
 val dictCraftingGrinder = <ore:craftingGrinder>;
@@ -35,10 +37,7 @@ val blockIron = <minecraft:iron_block>;
 val ingotWroughtIron = <gregtech:gt.metaitem.01:11304>;
 
 
-// --- fix dictionary ---
 
-dictGearIron.remove(gearIronRC);
-dictTEGearIron.remove(gearIronRC);
 
 
 // --- change recipe ---
@@ -92,6 +91,11 @@ for itemStack in toIngot {
 }
 blastFurnace.addRecipe(blockIron, false, false, 900, ingotWroughtIron * 9);
 
+
+
+
+
+// --- functions ---
 
 function getDustsImpure() as IOreDictEntry[] {
   var dustsImpure as IOreDictEntry[] = [];
