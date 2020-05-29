@@ -34,10 +34,7 @@ val scytheMud = <BiomesOPlenty:scytheMud>;
 val scytheAmethyst = <BiomesOPlenty:scytheAmethyst>;
 
 
-// --- fix oredictionary ---
 
-<ore:gemAmethyst>.add(enderAmethyst);
-<ore:blockAmethyst>.add(blockAmethyst);
 
 
 // --- recipe change ---

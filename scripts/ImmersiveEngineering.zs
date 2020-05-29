@@ -5,6 +5,9 @@ import mods.immersiveengineering.BlastFurnace as blastFurnace;
 import mods.gregtech.Assembler;
 
 
+
+
+
 // --- aliases ---
 val ingotSteelIE = <ImmersiveEngineering:metal:7>;
 val blockSteelIE = <ImmersiveEngineering:storage:7>;
@@ -92,10 +95,8 @@ val blockCoilRecipes as IItemStack[][] = [
   [blockCoilSteel   , ingotSteel, coilHV]
 ];
 
-// --- OreDictionary Fix ---
 
-<ore:ingotAluminium>.addAll(<ore:ingotAluminum>);
-<ore:ingotAluminum>.mirror(<ore:ingotAluminium>);
+
 
 
 // --- Recipe Change ---
@@ -217,6 +218,9 @@ recipes.addShaped(engineeringBlockHeavy, [
   [machineCasingTitanium, mahcineHullEV           , machineCasingTitanium],
   [dictCircuitData      , mechanicalComponentSteel, dictCircuitData      ]
 ]);
+
+
+
 
 
 // --- functions ---
