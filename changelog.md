@@ -208,6 +208,11 @@
 		- Changed recipes for coils.
 	- [AppliedEnergistics2]
 		- Implemented recipes.
+
+## **0.4.2a**
+- Description
+	Implemented recipes
+- Change
 	- [AE2Stuff]
 		- Changed version to rv3-0.5.1.9.
 	- [INpureCore]
