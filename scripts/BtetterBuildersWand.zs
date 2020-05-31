@@ -2,9 +2,9 @@ import mods.gregtech.Assembler;
 
 // --- aliases ---
 
-val stoneWand = <betterbuilderswands:wandStone>;
-val ironWand = <betterbuilderswands:wandIron>;
-val diamondWand = <betterbuilderswands:wandDiamond>;
+val wandStone = <betterbuilderswands:wandStone>;
+val wandIron = <betterbuilderswands:wandIron>;
+val wandDiamond = <betterbuilderswands:wandDiamond>;
 val wand16 = <betterbuilderswands:wandUnbreakable:4>;
 val wand32 = <betterbuilderswands:wandUnbreakable:5>;
 val wand64 = <betterbuilderswands:wandUnbreakable:6>;
@@ -21,7 +21,7 @@ val implegnatedStick = <Forestry:oakStick>;
 
 val cobblestone81 = <ExtraUtilities:cobblestone_compressed:1>;
 val dictBlockIron = <ore:blockIron>;
-val dictBlockDiamond = <ore:blockDiamond>;
+val dictDiamond = <ore:gemDiamond>;
 val dictIngotUnstable = <ore:ingotUnstable>;
 val dictblockUnstable = <ore:blockUnstable>;
 
@@ -32,23 +32,23 @@ val dictFile = <ore:craftingToolFile>;
 
 
 // --- recipe change ---
-recipes.remove(stoneWand);
-recipes.addShaped(stoneWand, [
+recipes.remove(wandStone);
+recipes.addShaped(wandStone, [
   [dictHammer  , dictWrench  , cobblestone81],
   [null        , treatedStick, dictDriver   ],
   [treatedStick, null        , dictFile     ]
 ]);
 
-recipes.remove(ironWand);
-recipes.addShaped(ironWand, [
+recipes.remove(wandIron);
+recipes.addShaped(wandIron, [
   [dictHammer , dictWrench , dictBlockIron],
-  [stoneWand  , sealedStick, dictDriver   ],
-  [sealedStick, stoneWand  , dictFile     ]
+  [null       , wandStone  , dictDriver   ],
+  [wandStone  , null       , dictFile     ]
 ]);
 
-recipes.remove(diamondWand);
-recipes.addShaped(diamondWand, [
-  [dictHammer      , dictWrench      , dictBlockDiamond],
-  [ironWand        , implegnatedStick, dictDriver      ],
-  [implegnatedStick, ironWand        , dictFile        ]
+recipes.remove(wandDiamond);
+recipes.addShaped(wandDiamond, [
+  [dictHammer, dictWrench , dictDiamond],
+  [null      , wandIron   , dictDriver ],
+  [wandIron  , null       , dictFile   ]
 ]);

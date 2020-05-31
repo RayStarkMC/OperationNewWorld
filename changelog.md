@@ -230,3 +230,6 @@
 
 ## **0.4.4a**
 - Description
+- Change
+	[BetterBuilder'sWand]
+		- Reduced the costs for the wands.
