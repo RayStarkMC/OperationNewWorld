@@ -3,6 +3,7 @@ import minetweaker.item.IIngredient;
 import minetweaker.liquid.ILiquidStack;
 import mods.gregtech.CircuitAssembler;
 import mods.gregtech.Assembler;
+import mods.gregtech.Lathe;
 
 
 
@@ -18,6 +19,7 @@ val microCapsulator = <LogisticsPipes:item.pipeComponents:4>;
 val circuitExpansion = <LogisticsPipes:item.pipeComponents:5>;
 val focusLens = <LogisticsPipes:item.pipeComponents:6>;
 val laserAcceptorInterface = <LogisticsPipes:item.pipeComponents:7>;
+val nanoHopper = <LogisticsPipes:item.logisticsParts:3>;
 
 val solderingStation = <LogisticsPipes:logisticsSolidBlock>;
 val lpJunction = <LogisticsPipes:logisticsSolidBlock:1>;
@@ -64,7 +66,7 @@ val modulePolymorphic = <LogisticsPipes:item.itemModule:4>;
 val moduleQuickSort = <LogisticsPipes:item.itemModule:5>;
 val moduleTerminus = <LogisticsPipes:item.itemModule:6>;
 val moduleAdvancedExtractor = <LogisticsPipes:item.itemModule:7>;
-val moduleExtractorMk2 = <LogisticsPipes:item.itemModule:107>;
+val moduleExtractorMk2 = <LogisticsPipes:item.itemModule:103>;
 val moduleAdvancedExtractorMk2 = <LogisticsPipes:item.itemModule:107>;
 val moduleExtractorMk3 = <LogisticsPipes:item.itemModule:203>;
 val moduleAdvancedExtractorMk3 = <LogisticsPipes:item.itemModule:207>;
@@ -79,6 +81,10 @@ val moduleEnchantmentSink = <LogisticsPipes:item.itemModule:31>;
 val moduleEnchantmentSinkMk2 = <LogisticsPipes:item.itemModule:131>;
 val moduleQuickSortCC = <LogisticsPipes:item.itemModule:14>;
 val moduleItemSinkCC = <LogisticsPipes:item.itemModule:15>;
+val moduleActiveSupplier = <LogisticsPipes:item.itemModule:502>;
+val moduleCraftingMk1 = <LogisticsPipes:item.itemModule:600>;
+val moduleCraftingMk2 = <LogisticsPipes:item.itemModule:601>;
+val moduleCraftingMk3 = <LogisticsPipes:item.itemModule:602>;
 
 val upgradeFuzzy = <LogisticsPipes:item.itemUpgrade:25>;
 
@@ -88,14 +94,15 @@ val ingotRedAlloy = <gregtech:gt.metaitem.01:11308>;
 val plateSteel = <gregtech:gt.metaitem.01:17305>;
 val plateDiamond = <gregtech:gt.metaitem.01:17500>;
 val plateRedstoneAlloy = <miscutils:itemPlateRedstoneAlloy>;
-val plateGlass = <minecraft:glass_pane>;
+val plateGlass = <gregtech:gt.metaitem.01:17890>;
 val plateUltimet = <gregtech:gt.metaitem.01:17344>;
 val plateAluminium = <gregtech:gt.metaitem.01:17019>;
 val plateGold = <gregtech:gt.metaitem.01:17086>;
+val lensGlass = <gregtech:gt.metaitem.01:24890>;
 val rodSteel = <gregtech:gt.metaitem.01:23305>;
 val wireFineGold = <gregtech:gt.metaitem.02:19086>;
 val coverCraftingTable = <gregtech:gt.metaitem.01:32744>;
-val circuitIntegrated12 = <gregtech:gt.integrated_circuit:12>;
+val circuitIntegrated3 = <gregtech:gt.integrated_circuit:3>;
 val machineHullLV = <gregtech:gt.blockmachines:11>;
 val machineHullMV = <gregtech:gt.blockmachines:12>;
 val machineHullHV = <gregtech:gt.blockmachines:13>;
@@ -151,18 +158,20 @@ moduleElectricManager.addTooltip(toolTipAboutBasicCircuit);
 
 // --- recipe change ---
 
-changeToAssemblerLV(pipeFrame*8, [rodSteel*12 , circuitIntegrated12*0], moltenSolderingAlloy*144);
+recipes.remove(pipeFrame);
+changeToAssemblerLV(pipeFrame*2, [rodSteel*3 , circuitIntegrated3*0], moltenSolderingAlloy*144);
 changeToAssemblerLV(microServo, [dictDyeGreen, dictDyeRed, dictDyeBlue, wireFineGold*3, ingotRubber, plateSteel], moltenRedAlloy*144);
 changeToAssemblerLV(microPackager, [dictDyeRed * 2, dictDyeGreen * 2, wireFineGold * 4, stickyPiston, plateSteel], moltenRedAlloy*144);
 changeToAssemblerLV(microCapsulator, [microPackager, glassBottle], null);
-changeToAssemblerLV(focusLens, [plateGlass*5], null);
-changeToAssemblerLV(laserAcceptorInterface, [focusLens, dustRedstone*3, rodSteel], null);
+changeToAssemblerHV(laserAcceptorInterface, [focusLens, dustRedstone*3, rodSteel], null);
 changeToAssemblerMV(moduleBlank, [paper*2, dustRedstone*2, circuitExpansion, processorRouting, dictCircuitGood], moltenSolderingAlloy*144);
 changeToCircuitAssemblerLV(processorRouting, [plateDiamond, plateRedstoneAlloy, wireFineGold*4, dictCircuitGood], moltenSolderingAlloy*144);
-changeToCircuitAssemblerLV(circuitExpansion, [plateSteel, plateRedstoneAlloy, wireFineGold * 4, dictCircuitGood], moltenSolderingAlloy*144);
+changeToCircuitAssemblerMV(circuitExpansion, [plateSteel, plateRedstoneAlloy, wireFineGold * 4, dictCircuitGood], moltenSolderingAlloy*144);
+recipes.remove(focusLens);
+Lathe.addRecipe(focusLens, lensGlass, 10, 480);
 
-changeToAssemblerLV(pipeUnrouted, [pipeFrame, dustRedstone, plateGlass*2], moltenSolderingAlloy * 144);
-changeToAssemblerLV(pipeBasic, [pipeUnrouted, processorRouting], moltenSolderingAlloy*144);
+changeToAssemblerLV(pipeUnrouted, [pipeFrame, dustRedstone, plateGlass*2], null);
+changeToAssemblerLV(pipeBasic, [pipeUnrouted, processorRouting], null);
 changeToAssemblerLV(pipeRequest, [pipeBasic, processorRouting, microPackager], null);
 changeToAssemblerLV(pipeProvider, [pipeBasic, dustRedstone*2, microPackager, microServo], null);
 changeToAssemblerMV(pipeCrafting, [pipeRequest, pipeProvider, dustRedstone, microPackager, microServo], null);
@@ -197,7 +206,7 @@ changeToAssemblerMV(moduleTerminus, [moduleBlank, dictDyeBlank, dictDyePurple, d
 changeToAssemblerMV(moduleProvider, [moduleBlank, dictDyeBlue*2, dustRedstone*2, microPackager], null);
 changeToAssemblerHV(moduleProviderMk2, [moduleProvider, circuitExpansion], null);
 changeToAssemblerHV(moduleExtractorMk3, [moduleExtractorMk2, microServo], null);
-changeToAssemblerHV(moduleQuickSort, [moduleBlank, dictDyeBlue*2, dustRedstone*2, processorRouting, microPackager], null);
+changeToAssemblerHV(moduleQuickSort, [moduleExtractor, processorRouting], null);
 changeToAssemblerHV(moduleAdvancedExtractor, [moduleExtractor, circuitExpansion], null);
 changeToAssemblerHV(moduleAdvancedExtractorMk2, [moduleAdvancedExtractor, microServo], null);
 changeToAssemblerHV(moduleAdvancedExtractorMk2, [moduleExtractorMk2, circuitExpansion], null);
@@ -213,6 +222,10 @@ changeToAssemblerEV(moduleElectricBuffur, [moduleBlank,  dictCircuitAdvanced*4, 
 changeToAssemblerEV(moduleEnchantmentSinkMk2, [moduleEnchantmentSink, circuitExpansion], null);
 changeToAssemblerEV(moduleQuickSortCC, [moduleQuickSort, modemWireless, modemWired, cableNetworking, torchRedstone, dustRedstone*3], null);
 changeToAssemblerEV(moduleItemSinkCC, [moduleItemSink, modemWireless, modemWired, cableNetworking, torchRedstone, dustRedstone*3], null);
+changeToAssemblerMV(moduleActiveSupplier, [modulePassiveSupplier, circuitExpansion], null);
+changeToAssemblerMV(moduleCraftingMk1, [pipeRequest, moduleProvider, dictDyeRed, microPackager], null);
+changeToAssemblerHV(moduleCraftingMk2, [moduleCraftingMk1, circuitExpansion], null);
+changeToAssemblerEV(moduleCraftingMk3, [moduleCraftingMk2, nanoHopper], null);
 
 changeRecipe(solderingStation, [
   [plateUltimet, coverCraftingTable, plateUltimet],

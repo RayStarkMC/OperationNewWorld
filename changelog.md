@@ -233,3 +233,9 @@
 - Change
 	[BetterBuilder'sWand]
 		- Reduced the costs for the wands.
+	[LogisticsPipes]
+		- Fixed recipes for crafting modules.
+		- Fixed recipe for Active Supplier Module.
+		- Fixed recipe for Unrouted Transport Pipe.
+		- Fixed recipe for Basic Pipe.
+		- Changed recipe for Focus Lens.
