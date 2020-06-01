@@ -224,12 +224,13 @@
 
 ## **0.4.3a**
 - Description
-	Fix scripts.
+	Fixed scripts.
 - Fix
 	- Fixed script for LP.
 
 ## **0.4.4a**
 - Description
+	Fixed recipes.
 - Change
 	[BetterBuilder'sWand]
 		- Reduced the costs for the wands.
@@ -243,3 +244,13 @@
 		- Increase the costs for the Rock Crusher.
 	[Pam'sHarvestCraft]
 		- Fixed recipe for Seed Soup.
+
+## **0.4.5a**
+- Description
+- Change
+	- [AppliedEnergistics2]
+		- Changed recipe for ME Interface.
+		- Changed recipes for Input / Output Bus.
+		- Changed recipes for Cards.
+	- [IronChest]
+		- Fixed recipe for Diamond Chest.
