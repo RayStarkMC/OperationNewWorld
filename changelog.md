@@ -239,3 +239,7 @@
 		- Fixed recipe for Unrouted Transport Pipe.
 		- Fixed recipe for Basic Pipe.
 		- Changed recipe for Focus Lens.
+	[Railcraft]
+		- Increase the costs for the Rock Crusher.
+	[Pam'sHarvestCraft]
+		- Fixed recipe for Seed Soup.

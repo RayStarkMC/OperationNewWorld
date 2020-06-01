@@ -25,16 +25,20 @@ static prefixShard as string = "shard";
 // --- aliases ---
 
 val rockCrusherBlock = <Railcraft:machine.alpha:15>;
-val dictCraftingGrinder = <ore:craftingGrinder>;
-val dictBlockSteel = <ore:blockSteel>;
-val electricPistonLV = <gregtech:gt.metaitem.01:32640>;
-val dictCircuitBasic = <ore:circuitBasic>;
 
-val ingotIron = <minecraft:iron_ingot>;
 val dustIron = <gregtech:gt.metaitem.01:2032>;
 val dustWroughtIron = <gregtech:gt.metaitem.01:2304>;
-val blockIron = <minecraft:iron_block>;
 val ingotWroughtIron = <gregtech:gt.metaitem.01:11304>;
+val electricPistonLV = <gregtech:gt.metaitem.01:32640>;
+val robotArmLV = <gregtech:gt.metaitem.01:32650>;
+val conveyerModuleLV = <gregtech:gt.metaitem.01:32630>;
+
+val ingotIron = <minecraft:iron_ingot>;
+val blockIron = <minecraft:iron_block>;
+
+val dictCircuitBasic = <ore:circuitBasic>;
+val dictCraftingGrinder = <ore:craftingGrinder>;
+val dictBlockSteel = <ore:blockSteel>;
 
 
 
@@ -73,9 +77,9 @@ for dustImpure in getDustsImpure() {
 
 recipes.remove(rockCrusherBlock);
 recipes.addShaped(rockCrusherBlock * 2, [
-  [electricPistonLV, dictCircuitBasic   , electricPistonLV],
+  [robotArmLV      , dictCircuitBasic   , robotArmLV      ],
   [dictCircuitBasic, dictCraftingGrinder, dictCircuitBasic],
-  [electricPistonLV, dictCircuitBasic   , electricPistonLV]
+  [conveyerModuleLV, dictCircuitBasic   , conveyerModuleLV]
 ]);
 
 // blast furnace

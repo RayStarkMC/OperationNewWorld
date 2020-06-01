@@ -23,9 +23,13 @@ val berryGarden = <harvestcraft:berrygarden>;
 val tropicalGarden = <harvestcraft:tropicalgarden>;
 val waterGarden = <harvestcraft:watergarden>;
 
-val karatCarrotSeed;
-val industrialHempSeed;
-val artichokeSeed;
+val seedsToFix = [
+  <karatgarden:seedcarrotbase>,
+  <ImmersiveEngineering:seed>,
+  <harvestcraft:artichokeseedItem>,
+  <Calculator:PrunaeSeeds>
+] as IItemStack[];
+
 
 val gearIronRC = <Railcraft:part.gear:1>;
 
@@ -114,4 +118,8 @@ val dictGears = [
 for i, gear in commonGears {
   dictGears[i].remove(gear);
   dictTEGears[i].remove(gear);
+}
+
+for seed in seedsToFix {
+  <ore:listAllseed>.add(seed);
 }
