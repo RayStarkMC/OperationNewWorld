@@ -35,13 +35,13 @@ val plateDenseSilver = <gregtech:gt.metaitem.01:22054>;
 // --- recipe change ---
 
 val chests as IItemStack[][] = [
-  [chestCopper  , chestDirt   , plateCopper],
-  [chestIron    , chestCopper , plateIron  ],
-  [chestSilver  , chestIron   , plateSilver],
-  [chestGold    , chestSilver , plateGold  ],
-  [chestDiamond , chestGold   , lensGlass  ],
-  [chestCrystal , chestDiamond, lensGlass  ],
-  [chestObsidian, chestDiamond, obsidian9  ]
+  [chestCopper  , chestDirt   , plateCopper ],
+  [chestIron    , chestCopper , plateIron   ],
+  [chestSilver  , chestIron   , plateSilver ],
+  [chestGold    , chestSilver , plateGold   ],
+  [chestDiamond , chestGold   , plateDiamond],
+  [chestCrystal , chestDiamond, lensGlass   ],
+  [chestObsidian, chestDiamond, obsidian9   ]
 ];
 
 for entry in chests
