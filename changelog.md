@@ -227,3 +227,19 @@
 	Fix scripts.
 - Fix
 	- Fixed script for LP.
+
+## **0.4.4a**
+- Description
+- Change
+	[BetterBuilder'sWand]
+		- Reduced the costs for the wands.
+	[LogisticsPipes]
+		- Fixed recipes for crafting modules.
+		- Fixed recipe for Active Supplier Module.
+		- Fixed recipe for Unrouted Transport Pipe.
+		- Fixed recipe for Basic Pipe.
+		- Changed recipe for Focus Lens.
+	[Railcraft]
+		- Increase the costs for the Rock Crusher.
+	[Pam'sHarvestCraft]
+		- Fixed recipe for Seed Soup.
