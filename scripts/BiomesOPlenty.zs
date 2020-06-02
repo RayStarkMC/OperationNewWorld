@@ -1,19 +1,20 @@
+import mods.gregtech.Centrifuge;
+
+
+
+
+
 // --- aliases ---
+val sand = <minecraft:sand>;
+val dirt = <minecraft:dirt>;
+val clay = <minecraft:clay_ball>;
 
 val rodIron = <gregtech:gt.metaitem.01:23032>;
-val dictGemAmethyst = <ore:gemAmethyst>;
-val dictHammer = <ore:craftingToolHardHammer>;
-val dictFile = <ore:craftingToolFile>;
-val dictMallet = <ore:craftingToolSoftHammer>;
-val dictSaw = <ore:craftingToolSaw>;
-val dictShovel = <ore:craftingToolShovel>;
-val dictStick = <ore:stickWood>;
-val dictPlank = <ore:plankWood>;
-val dictCobblestone = <ore:cobblestone>;
-val dictGemDiamond = <ore:gemDiamond>;
 val mudball = <BiomesOPlenty:mudball>;
-val enderAmethyst = <BiomesOPlenty:gems>;
-val blockAmethyst = <BiomesOPlenty:gemOre:1>;
+val mud = <BiomesOPlenty:mud>;
+val loamyDirt = <BiomesOPlenty:newBopDirt>;
+val loamyGlassDirt = <BiomesOPlenty:newBopGrass>;
+val quicksand = <BiomesOPlenty:mud:1>;
 
 val swordAmethyst = <BiomesOPlenty:swordAmethyst>;
 val shovelAmethyst = <BiomesOPlenty:shovelAmethyst>;
@@ -32,6 +33,21 @@ val scytheStone = <BiomesOPlenty:scytheStone>;
 val scytheDiamond = <BiomesOPlenty:scytheDiamond>;
 val scytheMud = <BiomesOPlenty:scytheMud>;
 val scytheAmethyst = <BiomesOPlenty:scytheAmethyst>;
+
+val plantBall = <IC2:itemFuelPlantBall>;
+
+val dictGemAmethyst = <ore:gemAmethyst>;
+val dictHammer = <ore:craftingToolHardHammer>;
+val dictFile = <ore:craftingToolFile>;
+val dictMallet = <ore:craftingToolSoftHammer>;
+val dictSaw = <ore:craftingToolSaw>;
+val dictShovel = <ore:craftingToolShovel>;
+val dictStick = <ore:stickWood>;
+val dictPlank = <ore:plankWood>;
+val dictCobblestone = <ore:cobblestone>;
+val dictGemDiamond = <ore:gemDiamond>;
+
+val liquidWater = <liquid:water>;
 
 
 
@@ -143,3 +159,9 @@ recipes.addShaped(scytheAmethyst, [
   [rodIron        , dictFile       , dictGemAmethyst],
   [rodIron        , null           , null           ]
 ]);
+
+Centrifuge.addRecipe([sand, dirt, clay], null, loamyDirt, null, liquidWater*500, [2000, 2000, 4000], 250, 30);
+Centrifuge.addRecipe([sand, dirt, clay, plantBall], null, loamyGlassDirt, null, liquidWater*500, [2000, 2000, 4000, 5000], 250, 30);
+Centrifuge.addRecipe([dirt], null, mudball*4, null, liquidWater*750, [10000], 250, 30);
+Centrifuge.addRecipe([dirt], null, mud, null, liquidWater*750, [10000], 250, 30);
+Centrifuge.addRecipe([sand], null, quicksand, null, liquidWater*1000, [10000], 250, 30);
