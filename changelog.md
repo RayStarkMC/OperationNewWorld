@@ -247,6 +247,7 @@
 
 ## **0.4.5a**
 - Description
+	Mainly implemented recipes for ExtraUtilities.
 - Change
 	- [AppliedEnergistics2]
 		- Changed recipe for ME Interface.
