@@ -150,9 +150,12 @@ for i, gear in commonGears {
   MetalPress.removeRecipe(gear);
 }
 
-recipes.removeShaped(<*>, [
-  [dictDustPyrotheum, <*>]
-]);
+for entry in oreDict.entries {
+  if(!entry.name.startsWith("ingot")) continue;
+  recipes.removeShaped(entry, [
+    [dictDustPyrotheum, <*>]
+  ]);
+}
 
 ChemicalReactor.addRecipe(null, moltenSignalum*576, dustCopper*3, dustRedstone*10, moltenSilver*144, 500, 30);
 ChemicalReactor.addRecipe(null, moltenLumium*576, dustTin*3, dustGrowstone*4, moltenSilver*144, 500, 120);
