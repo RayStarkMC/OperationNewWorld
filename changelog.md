@@ -277,3 +277,9 @@
 	- [ThermalDynamics]
 		- Changed recipe for Leadstone Fluxduct.
 		- Changed recipe for Hardened Fluxduct.
+
+## **0.4.6a**
+- Description
+	Fixed recipes.
+- Fix
+	- Fixed an issue where some recipes were deleted.
