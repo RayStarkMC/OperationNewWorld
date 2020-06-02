@@ -2,13 +2,14 @@ import minetweaker.oredict.IOreDictEntry;
 import minetweaker.item.IItemStack;
 import mods.immersiveengineering.MetalPress;
 import mods.nei.NEI;
+import mods.gregtech.ChemicalReactor;
+import mods.gregtech.BlastFurnace;
+
+
+
+
 
 // --- aliases--- 
-
-val hammer = <ore:craftingToolHardHammer>;
-val file = <ore:craftingToolFile>;
-val mallet = <ore:craftingToolSoftHammer>;
-val mortar = <ore:craftingToolMortar>;
 
 val woodShears = <ThermalFoundation:tool.shearsWood>;
 val stoneShears = <ThermalFoundation:tool.shearsStone>;
@@ -18,10 +19,34 @@ val woodSickle = <ThermalFoundation:tool.sickleWood>;
 val stoneSickle = <ThermalFoundation:tool.sickleStone>;
 val diamondSickle = <ThermalFoundation:tool.sickleDiamond>;
 
+val gearMold = <ImmersiveEngineering:mold:1>;
+
+val ingotEnergeticAlloy = <EnderIO:itemAlloy:1>;
+val ingotVibrantAlloy = <EnderIO:itemAlloy:2>;
+
+val dustRedstone = <minecraft:redstone>;
+val dustGrowstone = <minecraft:glowstone_dust>;
+
+val ingotHotEnderium = <gregtech:gt.metaitem.01:12321>;
+val dustPlatinum = <gregtech:gt.metaitem.01:2085>;
+val dustTin = <gregtech:gt.metaitem.01:2057>;
+val dustCopper = <gregtech:gt.metaitem.01:2035>;
+
+val dictDustPyrotheum = <ore:dustPyrotheum>;
+val steelPlate = <ore:plateSteel>;
+val hammer = <ore:craftingToolHardHammer>;
+val file = <ore:craftingToolFile>;
+val mallet = <ore:craftingToolSoftHammer>;
+val mortar = <ore:craftingToolMortar>;
 val woodPlank = <ore:plankWood>;
 val cobblestone = <ore:stoneCobble>;
 val diamond = <ore:gemDiamond>;
 val stick = <ore:stickWood>;
+
+val moltenSignalum = <liquid:molten.signalum>;
+val moltenLumium = <liquid:molten.lumium>;
+val moltenEnderiumBase = <liquid:molten.enderiumbase>;
+val moltenSilver = <liquid:molten.silver>;
 
 val commonGears = [
   <ThermalFoundation:material:12>,  // iron
@@ -74,8 +99,9 @@ val dictGears = [
   <ore:gearBronze>
 ] as IOreDictEntry[];
 
-val gearMold = <ImmersiveEngineering:mold:1>;
-val steelPlate = <ore:plateSteel>;
+
+
+
 
 // --- recipe change ---
 
@@ -118,10 +144,17 @@ for i, gear in uniqueGears {
   recipes.remove(gear);
 }
 
-// --- item removing ---
-
 // remove gear
 for i, gear in commonGears {
   recipes.remove(gear);
   MetalPress.removeRecipe(gear);
 }
+
+recipes.removeShaped(<*>, [
+  [dictDustPyrotheum, <*>]
+]);
+
+ChemicalReactor.addRecipe(null, moltenSignalum*576, dustCopper*3, dustRedstone*10, moltenSilver*144, 500, 30);
+ChemicalReactor.addRecipe(null, moltenLumium*576, dustTin*3, dustGrowstone*4, moltenSilver*144, 500, 120);
+ChemicalReactor.addRecipe(null, moltenEnderiumBase*576, dustTin*2, dustPlatinum, moltenSilver*144, 500, 480);
+BlastFurnace.addRecipe([ingotHotEnderium, ingotEnergeticAlloy], null, [ingotVibrantAlloy], moltenEnderiumBase*144, 6000, 1920, 3000);

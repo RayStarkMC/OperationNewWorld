@@ -1,4 +1,5 @@
 import mods.gregtech.Assembler;
+import mods.gregtech.AlloySmelter;
 
 // --- aliases ---
 
@@ -12,6 +13,7 @@ val tankTier4 = <ThermalExpansion:Tank:4>;
 val coilReception = <ThermalExpansion:material:1>;
 val coilTransmission = <ThermalExpansion:material:2>;
 val coilConductance = <ThermalExpansion:material:3>;
+val glassHardened = <ThermalExpansion:Glass>;
 
 val dynamoSteam = <ThermalExpansion:Dynamo>.withTag({RSControl: 0 as byte, Facing: 1 as byte, Energy: 0, Augments: [{Slot: 0, id: 4537 as short, Count: 1 as byte, Damage: 32 as short}]});
 val dynamoMagmatic = <ThermalExpansion:Dynamo:1>.withTag({RSControl: 0 as byte, Facing: 1 as byte, Energy: 0, Augments: [{Slot: 0, id: 4537 as short, Count: 1 as byte, Damage: 32 as short}]});
@@ -19,15 +21,15 @@ val dynamoCompression = <ThermalExpansion:Dynamo:2>.withTag({RSControl: 0 as byt
 val dynamoReactant = <ThermalExpansion:Dynamo:3>.withTag({RSControl: 0 as byte, Facing: 1 as byte, Energy: 0, Augments: [{Slot: 0, id: 4537 as short, Count: 1 as byte, Damage: 32 as short}]});
 val dynamoeEnervation = <ThermalExpansion:Dynamo:4>.withTag({RSControl: 0 as byte, Facing: 1 as byte, Energy: 0, Augments: [{Slot: 0, id: 4537 as short, Count: 1 as byte, Damage: 32 as short}]});
 
-val ingotGold = <minecraft:gold_ingot>;
 val ingotSilver = <gregtech:gt.metaitem.01:11054>;
+val ingotLead = <gregtech:gt.metaitem.01:11089>;
 val ingotElectrum = <gregtech:gt.metaitem.01:11303>;
 val ingotRedAlloy = <gregtech:gt.metaitem.01:11308>;
+val dustObsidian = <gregtech:gt.metaitem.01:2804>;
 val plateGlass = <gregtech:gt.metaitem.01:17890>;
 val plateCopper = <gregtech:gt.metaitem.01:17035>;
 val plateInvar = <gregtech:gt.metaitem.01:17302>;
 val plateDenseUltimet = <gregtech:gt.metaitem.01:22344>;
-val glassHardened = <ThermalExpansion:Glass>;
 val plateEnderium = <gregtech:gt.metaitem.01:17321>;
 val electricPumpLV = <gregtech:gt.metaitem.01:32610>;
 val electricPumpMV = <gregtech:gt.metaitem.01:32611>;
@@ -36,6 +38,8 @@ val electricPumpEV = <gregtech:gt.metaitem.01:32613>;
 val machineHullHV = <gregtech:gt.blockmachines:13>;
 val frameBoxMagnalium = <gregtech:gt.blockmachines:4409>;
 val dynamoHatchHV = <gregtech:gt.blockmachines:33>;
+
+val ingotGold = <minecraft:gold_ingot>;
 
 val tankBC = <BuildCraft|Factory:tankBlock>;
 
@@ -79,8 +83,10 @@ recipes.addShaped(tankTier4, [
 ]);
 
 recipes.remove(coilReception);
-recipes.remove(coilTransmission);
-recipes.remove(coilConductance);
 Assembler.addRecipe(coilReception, ingotGold, ingotRedAlloy*2, moltenSolderingAlloy * 144, 200, 256);
+recipes.remove(coilTransmission);
 Assembler.addRecipe(coilTransmission, ingotSilver, ingotRedAlloy*2, moltenSolderingAlloy * 144, 200, 256);
+recipes.remove(coilConductance);
 Assembler.addRecipe(coilConductance, ingotElectrum, ingotRedAlloy*2, moltenSolderingAlloy * 144, 200, 256);
+
+AlloySmelter.addRecipe(glassHardened, ingotLead, dustObsidian*4, 400, 24);
