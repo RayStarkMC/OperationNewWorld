@@ -254,3 +254,25 @@
 		- Changed recipes for Cards.
 	- [IronChest]
 		- Fixed recipe for Diamond Chest.
+	- [Chisel]
+		- Added the recipes for processing stones.
+	- [BiomesO'Plety]
+		- Added the recipes for processing soils.
+	- [ExtraUtilities]
+		- Changed the recipe for Slightly Larger Chest.
+		- Changed the recipe for Mini Chest.
+		- Changed the recipe for drum;
+		- Changed the recipes for generators.
+		- Increased the cost for QED.
+		- Changed the recipe for Ender-Infused Obsidian.
+		- Disabled ore processing with QED.
+	- [ThermalFoundation]
+		- Disabled ore processing with Pyrotheum Dust.
+		- Added recipe for Signalum.
+		- Added recipe for Lumium.
+		- Added recipe for Enderium.
+	- [ThermalExpansion]
+		- Added recipe for Hardened Glass.
+	- [ThermalDynamics]
+		- Changed recipe for Leadstone Fluxduct.
+		- Changed recipe for Hardened Fluxduct.
