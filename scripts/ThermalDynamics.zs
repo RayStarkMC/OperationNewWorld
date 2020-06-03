@@ -25,4 +25,5 @@ val cableCupronickel4x = <gregtech:gt.blockmachines:1348>;
 recipes.remove(fluxDuctLeadstone);
 Assembler.addRecipe(fluxDuctLeadstone, [cableLead4x*2, glass, plateRedAlloy*6], null, 400, 24);
 
+recipes.remove(fluxDuctHardened);
 Assembler.addRecipe(fluxDuctHardened, [cableCupronickel4x*2, glassHardened, plateInvar*6], null, 400, 96);

@@ -283,3 +283,9 @@
 	Fixed recipes.
 - Fix
 	- Fixed an issue where some recipes were deleted.
+
+## **0.4.7a**
+- Description
+- Fix
+	- Fixed an issue where BC pump do not consume water source.
+	- Deleated the default recipes for Hardened Fluxduct.
