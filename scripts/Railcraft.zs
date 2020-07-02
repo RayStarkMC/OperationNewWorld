@@ -55,23 +55,33 @@ val prefixes = [
   prefixShard
 ] as string[];
 
-for entry in oreDict.entries {
-  for prefix in prefixes {
-    if(entry.name.startsWith(prefix)) {
-      rockCrusher.removeRecipeIfPresent(entry);
-    }
-  }
-}
+rockCrusher.removeRecipe(<*>);
 
 for dustImpure in getDustsImpure() {
+  val crushed = "crushed";
+  val purified = "Purified";
+  val centrifuged = "Centrifuged";
+
   val suffix = getSuffixOfDustImpure(dustImpure);
   val output = dustImpure.firstItem;
   val outputs = [output.weight(1), output.weight(0.5)] as WeightedItemStack[];
   
   for entry in oreDict.entries {
-    if(entry.name.endsWith(suffix) && entry.name.startsWith("crushed")) {
-      rockCrusher.addRecipe(outputs, entry.firstItem);
-    }
+    val name = entry.name;
+    if(!name.startsWith(crushed)) continue;
+    
+    var dustIdentity = name.substring(crushed.length());
+    if(dustIdentity.startsWith(purified))
+      dustIdentity = dustIdentity.substring(purified.length());
+    else if(dustIdentity.startsWith("Centrifuged"))
+      dustIdentity = dustIdentity.substring(centrifuged.length());
+      
+    if(!dustIdentity.contentEquals(suffix)) continue;
+    
+    for crushedOre in entry.items rockCrusher.addRecipe(outputs, crushedOre);
+    
+    //if(!name.endsWith(suffix) || !name.startsWith("crushed") || name.substring(7).startsWith("Any")) continue;
+    //for crushedOre in entry.items rockCrusher.addRecipe(outputs, crushedOre);
   }
 }
 

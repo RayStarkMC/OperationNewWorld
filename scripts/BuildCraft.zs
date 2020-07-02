@@ -1,3 +1,4 @@
+
 import minetweaker.item.IItemStack;
 import minetweaker.oredict.IOreDictEntry;
 import mods.buildcraft.AssemblyTable;
@@ -35,6 +36,8 @@ val tank = <BuildCraft|Factory:tankBlock>;
 val chute = <BuildCraft|Factory:blockHopper>;
 val autoWorkbench = <BuildCraft|Factory:autoWorkbenchBlock>;
 val filler = <BuildCraft|Builders:fillerBlock>;
+val assemblyTable = <BuildCraft|Silicon:laserTableBlock>;
+val laser = <BuildCraft|Silicon:laserBlock>;
 val builder = <BuildCraft|Builders:builderBlock>;
 val quarry = <BuildCraft|Builders:machineBlock>;
 val landMark = <BuildCraft|Core:markerBlock>;
@@ -57,6 +60,9 @@ val chips  as IItemStack[] = [
   <BuildCraft|Silicon:redstoneChipset:7>
 ];
 
+val plateRedAlloy = <gregtech:gt.metaitem.01:17308>;
+val plateWroughtIron = <gregtech:gt.metaitem.01:17304>;
+val emmiterMV = <gregtech:gt.metaitem.01:32681>;
 val machineHullULV = <gregtech:gt.blockmachines:10>;
 val machineHullLV = <gregtech:gt.blockmachines:11>;
 val machineHullHV = <gregtech:gt.blockmachines:13>;
@@ -70,20 +76,31 @@ val bronzeGear = <gregtech:gt.metaitem.02:31300>;
 val gearGoldGT = <gregtech:gt.metaitem.02:31086>;
 val gearDiamondGT = <gregtech:gt.metaitem.02:31500>;
 val gearStainlessGT = <gregtech:gt.metaitem.02:31306>;
-val plateWroughtIron = <gregtech:gt.metaitem.01:17304>;
-val dictCircuitGood = <ore:circuitGood>;
-val dictCircuitAdvanced = <ore:circuitAdvanced>;
-val dictCraftingGrinder = <ore:craftingGrinder>;
 val programmedCircuit8 = <gregtech:gt.integrated_circuit:8>;
+val lensRuby = <gregtech:gt.metaitem.01:24502>;
+val lensFoolsRuby = <gregtech:gt.metaitem.01:24512>;
+val lensDiamond = <gregtech:gt.metaitem.01:24500>;
+val assemblerMV = <gregtech:gt.blockmachines:212>;
+val laserEngraverMV = <gregtech:gt.blockmachines:592>;
+
+val obsidian9 = <miscutils:blockCompressedObsidian>;
+
 val drillDiamond = <IC2:itemToolDDrill:*>;
+
 val hammer = <ore:craftingToolHardHammer>;
 val piston = <minecraft:piston>;
 val bucket = <minecraft:bucket>;
 val ironBars = <minecraft:iron_bars>;
 val glass = <minecraft:glass>;
 val hopper = <minecraft:hopper>;
+
 val craftingTable9 = <Avaritia:Double_Craft>;
 val woodenStorageCrate = <ImmersiveEngineering:woodenDevice:4>;
+
+val dictCircuitBasic = <ore:circuitBasic>;
+val dictCircuitGood = <ore:circuitGood>;
+val dictCircuitAdvanced = <ore:circuitAdvanced>;
+val dictCraftingGrinder = <ore:craftingGrinder>;
 
 
 // --- recipe change ---
@@ -141,9 +158,28 @@ recipes.addShaped(autoWorkbench, [
 
 recipes.remove(filler);
 recipes.addShaped(filler, [
-  [dictCircuitGood   , landMark          , dictCircuitGood   ],
+  [dictCircuitBasic  , landMark          , dictCircuitBasic  ],
   [yellowStripeBlock0, machineHullLV     , yellowStripeBlock1],
   [gearGoldGT        , woodenStorageCrate, gearGoldGT        ]
+]);
+
+recipes.remove(assemblyTable);
+recipes.addShaped(assemblyTable, [
+  [obsidian9    , laserEngraverMV, obsidian9    ],
+  [gearDiamondGT, lensRuby       , gearDiamondGT],
+  [obsidian9    , assemblerMV    , obsidian9    ]
+]);
+recipes.addShaped(assemblyTable, [
+  [obsidian9    , laserEngraverMV, obsidian9    ],
+  [gearDiamondGT, lensFoolsRuby  , gearDiamondGT],
+  [obsidian9    , assemblerMV    , obsidian9    ]
+]);
+
+recipes.remove(laser);
+recipes.addShaped(laser, [
+  [plateRedAlloy, plateRedAlloy, plateRedAlloy],
+  [plateRedAlloy, lensDiamond  , plateRedAlloy],
+  [obsidian9    , emmiterMV    , obsidian9    ]
 ]);
 
 recipes.remove(quarry);

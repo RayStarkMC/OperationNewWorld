@@ -283,3 +283,30 @@
 	Fixed recipes.
 - Fix
 	- Fixed an issue where some recipes were deleted.
+
+## **0.4.7a**
+- Description
+	Fixed some issues.
+- Change
+	- [AppliedEnergistics2]
+		- Changed recipe for Charger.
+	- [EnderIO]
+		- Implemented some recipes.
+	- [Forestry]
+		- Blacklisted some bees.
+	- [RailCraft]
+		- Removed all recipes except ore processing from Rock Crusher.
+	- [Calculator]
+		- Implemented some recipes.
+	- [LogisticsPipes]
+		- Dicreased the cost for Routing Logic Processor.
+	- [GregTech]
+		- Electronic Circuit can be now crafted instead of Integrated Circuit from Programmed Circuit.
+		- Disabled deprecated recipes.
+	- [BuildCraft]
+		- Decreased the cost for Filler.
+		- Changed recipe for Assembly Table.
+- Fix
+	- Fixed an issue where BC pump do not consume water source.
+	- Deleated the default recipes for Hardened Fluxduct.
+	- Fixed an issue where RockCrusher processes some crushed ores as different ore.

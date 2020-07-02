@@ -22,6 +22,7 @@ val formationCore = <appliedenergistics2:item.ItemMultiMaterial:43>;
 val basicCard = <appliedenergistics2:item.ItemMultiMaterial:25>;
 val advancedCard = <appliedenergistics2:item.ItemMultiMaterial:28>;
 
+val charger = <appliedenergistics2:tile.BlockCharger>;
 val drive = <appliedenergistics2:tile.BlockDrive>;
 val controller = <appliedenergistics2:tile.BlockController>;
 val energyAcceptor = <appliedenergistics2:tile.BlockEnergyAcceptor>;
@@ -41,6 +42,7 @@ val plateTitanium = <gregtech:gt.metaitem.01:17028>;
 val plateAluminium = <gregtech:gt.metaitem.01:17019>;
 val plateSteel = <gregtech:gt.metaitem.01:17305>;
 val plateStainlessSteel = <gregtech:gt.metaitem.01:17306>;
+val rodSteel = <gregtech:gt.metaitem.01:23305>;
 val dustGrowstone = <minecraft:glowstone_dust>;
 val crystalPureQuartz = <appliedenergistics2:item.ItemMultiMaterial:10>;
 val crystalPureFluix = <appliedenergistics2:item.ItemMultiMaterial:12>;
@@ -77,6 +79,13 @@ FormingPress.addRecipe(printedSilicon, plateSilicon * 2, inscriberSilicon * 0, 4
 FormingPress.addRecipe(printedLogic, plateGold * 2, inscriberLogic * 0, 400, 16);
 FormingPress.addRecipe(printedCalculation, plateQuartz * 2, inscriberCalculation * 0, 400, 64);
 FormingPress.addRecipe(printedEngineering, plateDiamond * 2, inscriberEngineering * 0, 400, 256);
+
+recipes.remove(charger);
+recipes.addShaped(charger, [
+  [plateSteel, blockFluix, plateSteel],
+  [rodSteel  , null      , null      ],
+  [plateSteel, blockFluix, plateSteel]
+]);
 
 recipes.remove(energyAcceptor);
 recipes.addShaped(energyAcceptor, [
