@@ -12,6 +12,9 @@ val pulpPolyethylene = <gregtech:gt.metaitem.01:2874>;
 val sheetPolyethylene = <gregtech:gt.metaitem.01:17874>;
 val barPolyethylene = <gregtech:gt.metaitem.01:11874>;
 
+val programmedCircuit0 = <gregtech:gt.integrated_circuit>;
+val integratedLogicCircuit = <gregtech:gt.metaitem.01:32701>;
+val electronicCircuit = <IC2:itemPartCircuit>;
 
 
 
@@ -34,3 +37,6 @@ val recipeInputsForRSFurnace as IItemStack[] = [
 for input in recipeInputsForRSFurnace
   Furnace.removeRecipe(input);
 Furnace.addRecipe(1600, sheetPolyethylene, barPolyethylene);
+
+recipes.remove(integratedLogicCircuit);
+recipes.addShapeless(electronicCircuit, [programmedCircuit0]);

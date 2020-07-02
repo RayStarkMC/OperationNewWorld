@@ -165,7 +165,7 @@ changeToAssemblerLV(microPackager, [dictDyeRed * 2, dictDyeGreen * 2, wireFineGo
 changeToAssemblerLV(microCapsulator, [microPackager, glassBottle], null);
 changeToAssemblerHV(laserAcceptorInterface, [focusLens, dustRedstone*3, rodSteel], null);
 changeToAssemblerMV(moduleBlank, [paper*2, dustRedstone*2, circuitExpansion, processorRouting, dictCircuitGood], moltenSolderingAlloy*144);
-changeToCircuitAssemblerLV(processorRouting, [plateDiamond, plateRedstoneAlloy, wireFineGold*4, dictCircuitGood], moltenSolderingAlloy*144);
+changeToCircuitAssemblerLV(processorRouting, [plateDiamond, plateRedstoneAlloy, wireFineGold*4, dictCircuitBasic], moltenSolderingAlloy*144);
 changeToCircuitAssemblerMV(circuitExpansion, [plateSteel, plateRedstoneAlloy, wireFineGold * 4, dictCircuitGood], moltenSolderingAlloy*144);
 recipes.remove(focusLens);
 Lathe.addRecipe(focusLens, lensGlass, 10, 480);

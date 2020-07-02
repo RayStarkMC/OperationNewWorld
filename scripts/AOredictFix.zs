@@ -33,8 +33,11 @@ val seedsToFix = [
 
 val gearIronRC = <Railcraft:part.gear:1>;
 
+val quiteClearGlass = <EnderIO:blockFusedQuartz:1>;
+
 val dictGearIron = <ore:gearIron>;
 val dictTEGearIron = <ore:thermalexpansion:machineIron>;
+val dictGlass = <ore:glass>;
 
 
 
@@ -123,3 +126,5 @@ for i, gear in commonGears {
 for seed in seedsToFix {
   <ore:listAllseed>.add(seed);
 }
+
+dictGlass.remove(quiteClearGlass);
